@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cerse356bmuaf"]
+
+[ext_resource type="PackedScene" uid="uid://d3p6t8w0e24nt" path="res://Scenes/car.tscn" id="1_jjgbg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
+[node name="Node3D" type="Node3D" unique_id=792172558]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1740405203]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1000567321]
+transform = Transform3D(1000, 0, 0, 0, 0.07, 0, 0, 0, 1000, 0, 0, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="StaticBody3D/CollisionShape3D" unique_id=773167388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0.5)
+
+[node name="Car" parent="." unique_id=540180134 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9268074, 1.2787247, -1.32518)
