@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
 
-[node name="Node3D" type="Node3D" unique_id=792172558]
+[node name="Main" type="Node3D" unique_id=792172558]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1740405203]
 
@@ -17,3 +17,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0.5)
 
 [node name="Car" parent="." unique_id=540180134 instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9268074, 1.2787247, -1.32518)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1929319255]
+transform = Transform3D(-0.9334965, 1.4338849e-07, -0.35858658, -0.35705474, -0.092333734, 0.9295087, -0.033109352, 0.9957281, 0.086192995, 0, 5.2513885, 0)
+light_color = Color(0.99999946, 0.98838586, 0.65353477, 1)
+light_energy = 0.8
+shadow_enabled = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cft2d0pulptut" path="res://Scripts/car.gd" id="1_go66d"]
 [ext_resource type="Texture2D" uid="uid://bg55rod4nr5vc" path="res://Assets/Textures/colormap.png" id="2_1sfmx"]
-[ext_resource type="Script" uid="uid://cvq6omn6rbdw4" path="res://Scripts/cam.gd" id="3_1sfmx"]
+[ext_resource type="Script" uid="uid://b2otlj1nil5pm" path="res://Scripts/camera_3d.gd" id="3_1sfmx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1vy4"]
 resource_name = "colormap"
@@ -279,9 +279,6 @@ shape = SubResource("BoxShape3D_yf5fn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45194578, -0.936587)
 shape = SubResource("BoxShape3D_57qmd")
 
-[node name="CameraArm" type="SpringArm3D" parent="." unique_id=198595689]
-collision_mask = 0
-spring_length = 5.0
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1063758425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.380774, 4.460454, -11.911486)
 script = ExtResource("3_1sfmx")
-
-[node name="Camera3D" type="Camera3D" parent="CameraArm" unique_id=1063758425]

@@ -6,7 +6,6 @@ var turnSpeed = 3
 var turnAmount = 0.3
 
 func _physics_process(delta: float) -> void:
-	$CameraArm.position = position
 	
 	var dir = Input.get_action_strength("Gas") - Input.get_action_strength("Brake")
 	var steeringDir = Input.get_action_strength("Left") - Input.get_action_strength("Right")
