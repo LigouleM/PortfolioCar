@@ -14,23 +14,27 @@ func _run() -> void:
 		var mesh_instance = _find_mesh(node)
 		
 		if mesh_instance:
+			# 1. Nombre único para esta pieza
+			var unique_name = "roadTile" + str(counter).pad_zeros(3)
+			
+			# 2. Contenedor exterior (Node3D)
+			var item_root = Node3D.new()
+			item_root.name = unique_name + "_container"
+			root.add_child(item_root)
+			item_root.owner = root
+			
+			# 3. Malla INTERNA (Esta es la que Godot usa como nombre en la librería)
 			var new_mesh = MeshInstance3D.new()
 			new_mesh.mesh = mesh_instance.mesh
-			new_mesh.name = "roadTile" + str(counter).pad_zeros(3)
-			counter += 1
-			
-			root.add_child(new_mesh)
+			new_mesh.name = unique_name # ¡AQUÍ ESTABA EL ERROR! Ahora cada malla interna tiene nombre único
+			item_root.add_child(new_mesh)
 			new_mesh.owner = root 
 			
-			# --- CENTRADO AUTOMÁTICO ---
-			# 1. Obtenemos las dimensiones físicas reales de la malla
+			# 4. Centrado automático
 			var aabb = new_mesh.mesh.get_aabb()
-			
-			# 2. Desplazamos el nodo en dirección contraria al centro de su geometría.
-			# Dejamos la Y en 0 para no alterar la altura del piso.
 			new_mesh.position = Vector3(-aabb.get_center().x, 0, -aabb.get_center().z)
-			# ---------------------------
-
+			
+			# 5. Colisiones
 			new_mesh.create_trimesh_collision()
 			
 			for child in new_mesh.get_children():
@@ -38,10 +42,12 @@ func _run() -> void:
 				for subchild in child.get_children():
 					subchild.owner = root
 
+			# Borramos el original
 			node.queue_free()
 			nodos_procesados += 1
+			counter += 1
 			
-	print("¡Proceso completado y centrado! Se extrajeron " + str(nodos_procesados) + " mallas.")
+	print("¡Listo! Se extrajeron " + str(nodos_procesados) + " mallas con nombres únicos.")
 
 func _find_mesh(node: Node) -> MeshInstance3D:
 	if node is MeshInstance3D: return node
