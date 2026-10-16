@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cft2d0pulptut" path="res://Scripts/car.gd" id="1_go66d"]
 [ext_resource type="Texture2D" uid="uid://bg55rod4nr5vc" path="res://Assets/Textures/colormap.png" id="2_1sfmx"]
 [ext_resource type="Script" uid="uid://b2otlj1nil5pm" path="res://Scripts/camera_3d.gd" id="3_1sfmx"]
+[ext_resource type="PackedScene" uid="uid://cw1jaf2kjja8f" path="res://Scenes/smokeParts.tscn" id="4_yi23e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1vy4"]
 resource_name = "colormap"
@@ -282,3 +283,18 @@ shape = SubResource("BoxShape3D_57qmd")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1063758425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.380774, 4.460454, -11.911486)
 script = ExtResource("3_1sfmx")
+
+[node name="SmokeParts" parent="." unique_id=882449131 instance=ExtResource("4_yi23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34477854, 0, -1.2251732)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=595717646]
+transform = Transform3D(1, 0, 0, 0, -0.9898716, 0.1419655, 0, -0.1419655, -0.9898716, -0.4136901, 0.63044536, 1.0099872)
+visible = false
+light_energy = 10.0
+spot_angle = 8.796038
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=6218217]
+transform = Transform3D(1, 0, 0, 0, -0.9898716, 0.1419655, 0, -0.1419655, -0.9898716, 0.38221788, 0.63044536, 1.0099872)
+visible = false
+light_energy = 10.0
+spot_angle = 8.796038

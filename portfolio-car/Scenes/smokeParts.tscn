@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cw1jaf2kjja8f"]
+
+[ext_resource type="Shader" uid="uid://c38bg5v81upum" path="res://Scripts/Shaders/smokeShader.tres" id="1_ql5o6"]
+[ext_resource type="Texture2D" uid="uid://ciwr4lqlaeo" path="res://Assets/Textures/T_Noise_001R.png" id="2_ldwq6"]
+[ext_resource type="ArrayMesh" uid="uid://cx67hvbmqd5n5" path="res://Assets/Models/Smoke.obj" id="3_kvfku"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hi42"]
+render_priority = 0
+shader = ExtResource("1_ql5o6")
+shader_parameter/Dissolve_Scale = Vector2(1, 1)
+shader_parameter/Dissolver_Parameter = ExtResource("2_ldwq6")
+
+[sub_resource type="Curve" id="Curve_bo8va"]
+_data = [Vector2(0, 0.46077412), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.5061145, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vbg8v"]
+texture_mode = 1
+curve = SubResource("Curve_bo8va")
+
+[sub_resource type="Gradient" id="Gradient_rr87a"]
+offsets = PackedFloat32Array(0, 0.5645637, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.33797568, 0.33797586, 0.33797574, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wkp6p"]
+gradient = SubResource("Gradient_rr87a")
+
+[sub_resource type="Curve" id="Curve_ibsb3"]
+_data = [Vector2(0, 0.251652), 0.0, 0.0, 0, 0, Vector2(1, 0.75385463), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ikx2c"]
+curve = SubResource("Curve_ibsb3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0dobp"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(-0.15, 1, -0.5)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_ikx2c")
+color_ramp = SubResource("GradientTexture1D_wkp6p")
+alpha_curve = SubResource("CurveTexture_vbg8v")
+
+[node name="SmokeParts" type="GPUParticles3D" unique_id=882449131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8163886, 0, 0)
+material_override = SubResource("ShaderMaterial_6hi42")
+amount = 25
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_0dobp")
+draw_pass_1 = ExtResource("3_kvfku")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0olwtq56x4jt" path="res://Assets/Textures/skybox-day.png" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://d3p6t8w0e24nt" path="res://Scenes/car.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://d2s5jekv0k3np" path="res://Scripts/daycycle.gd" id="2_6bp64"]
 [ext_resource type="MeshLibrary" uid="uid://b52rnj2jjdw1v" path="res://Assets/roadLibrary.tres" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://byvaee2u52ufj" path="res://Assets/Textures/red.png" id="4_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dowv2shqovvev" path="res://Assets/Textures/black.png" id="5_21xkr"]
@@ -37,9 +38,14 @@ transform = Transform3D(-0.9163755, 0.12478605, -0.3803741, -0.1240854, 0.814835
 light_color = Color(0.98039216, 0.98039216, 0.20784314, 1)
 light_energy = 0.1
 shadow_enabled = true
+script = ExtResource("2_6bp64")
+day_color = Color(0.98039216, 0.98039216, 0.20784314, 1)
+day_energy = 0.15
+night_energy = 0.025
 
-[node name="Car" parent="." unique_id=540180134 instance=ExtResource("1_jjgbg")]
+[node name="Car" parent="." unique_id=540180134 node_paths=PackedStringArray("sun") instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.299654, 1.2787247, -1.32518)
+sun = NodePath("../WorldEnvironment/DirectionalLight3D")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=724050731]
 mesh_library = ExtResource("2_bo1nx")
