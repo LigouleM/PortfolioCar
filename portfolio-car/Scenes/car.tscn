@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bg55rod4nr5vc" path="res://Assets/Textures/colormap.png" id="2_1sfmx"]
 [ext_resource type="Script" uid="uid://b2otlj1nil5pm" path="res://Scripts/camera_3d.gd" id="3_1sfmx"]
 [ext_resource type="PackedScene" uid="uid://cw1jaf2kjja8f" path="res://Scenes/smokeParts.tscn" id="4_yi23e"]
+[ext_resource type="AudioStream" uid="uid://e8rea3ktsa1n" path="res://Assets/SFX/engine.mp3" id="5_aqss3"]
+[ext_resource type="AudioStream" uid="uid://bqlc7v2bmupe5" path="res://Assets/SFX/honk.mp3" id="6_y3wrf"]
+[ext_resource type="AudioStream" uid="uid://3qua4n4884nj" path="res://Assets/SFX/screech.mp3" id="7_argdw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1vy4"]
 resource_name = "colormap"
@@ -298,3 +301,13 @@ transform = Transform3D(1, 0, 0, 0, -0.9898716, 0.1419655, 0, -0.1419655, -0.989
 visible = false
 light_energy = 10.0
 spot_angle = 8.796038
+
+[node name="engine" type="AudioStreamPlayer3D" parent="." unique_id=461227575]
+stream = ExtResource("5_aqss3")
+autoplay = true
+
+[node name="honk" type="AudioStreamPlayer3D" parent="." unique_id=1655740538]
+stream = ExtResource("6_y3wrf")
+
+[node name="screech" type="AudioStreamPlayer3D" parent="." unique_id=1076876277]
+stream = ExtResource("7_argdw")

@@ -1,22 +1,20 @@
 [gd_scene format=3 uid="uid://dornkkt1dmthe"]
 
-[ext_resource type="Texture2D" uid="uid://ce2csg8oljbkr" path="res://Assets/Textures/green.png" id="1_khmmt"]
 [ext_resource type="Script" uid="uid://2qhki7t8wx8g" path="res://Scripts/link_block.gd" id="1_tgn3q"]
+[ext_resource type="PackedScene" uid="uid://cwh3egnp1jteh" path="res://Assets/Models/3d_github_logo/scene.gltf" id="2_tgn3q"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgn3q"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.8666667)
-albedo_texture = ExtResource("1_khmmt")
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 1.1353283
 
 [node name="LinkBlock" type="Area3D" unique_id=48135125]
 script = ExtResource("1_tgn3q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=737806734]
-shape = SubResource("BoxShape3D_g4v7s")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2141343635]
+shape = SubResource("SphereShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1967911049]
-material = SubResource("StandardMaterial3D_tgn3q")
+[node name="pivot" type="Node3D" parent="." unique_id=646566433]
+
+[node name="Sketchfab_Scene" parent="pivot" unique_id=406213571 instance=ExtResource("2_tgn3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -6)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

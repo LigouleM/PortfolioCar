@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://byvaee2u52ufj" path="res://Assets/Textures/red.png" id="4_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dowv2shqovvev" path="res://Assets/Textures/black.png" id="5_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dornkkt1dmthe" path="res://Scenes/linkBlock.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://cwh3egnp1jteh" path="res://Assets/Models/3d_github_logo/scene.gltf" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://dhk17cq1x5hy8" path="res://Assets/Models/3d_linkedin_logo/scene.gltf" id="9_ynf5e"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oijfj"]
 panorama = ExtResource("1_8gbba")
@@ -184,4 +186,11 @@ material = SubResource("StandardMaterial3D_344ge")
 shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="LinkBlock" parent="." unique_id=48135125 instance=ExtResource("6_21xkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.537222, 1.1499996, 19.53086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.537, 2, 19.531)
+url_to_open = "https://github.com/LigouleM"
+model_scene = ExtResource("8_344ge")
+
+[node name="LinkBlock2" parent="." unique_id=268502665 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9601164, 2, 19.531)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+model_scene = ExtResource("9_ynf5e")
