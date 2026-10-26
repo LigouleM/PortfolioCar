@@ -1,0 +1,11 @@
+Model Information:
+* title:	Question Mark
+* source:	https://sketchfab.com/3d-models/question-mark-d48a18d84cbe43ffb6c2a4da2c91e1d7
+* author:	yoshi_hoshi (https://sketchfab.com/yoshi_hoshi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Question Mark" (https://sketchfab.com/3d-models/question-mark-d48a18d84cbe43ffb6c2a4da2c91e1d7) by yoshi_hoshi (https://sketchfab.com/yoshi_hoshi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

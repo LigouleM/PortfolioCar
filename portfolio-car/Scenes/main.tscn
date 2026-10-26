@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dornkkt1dmthe" path="res://Scenes/linkBlock.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cwh3egnp1jteh" path="res://Assets/Models/3d_github_logo/scene.gltf" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://dhk17cq1x5hy8" path="res://Assets/Models/3d_linkedin_logo/scene.gltf" id="9_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://dlblqfxct2f72" path="res://Assets/Models/question_mark/scene.gltf" id="10_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://buyr1ycixetgf" path="res://Scenes/Sign.tscn" id="10_hptm8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oijfj"]
@@ -190,11 +191,22 @@ shape = SubResource("BoxShape3D_yf5fn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.159557, 2, 74)
 url_to_open = "https://github.com/LigouleM"
 model_scene = ExtResource("8_344ge")
+model_offset = Vector3(0, -3, -6)
 
 [node name="LDMarcos" parent="." unique_id=268502665 instance=ExtResource("6_21xkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2, 74)
 url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "linkedin"
 model_scene = ExtResource("9_ynf5e")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupMarcos" parent="." unique_id=514377004 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.078321, 2, 74)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
 
 [node name="Sign" parent="." unique_id=285660480 instance=ExtResource("10_hptm8")]
 transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, 0.06265092, 0.71000195, 20.085924)
