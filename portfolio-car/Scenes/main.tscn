@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dhk17cq1x5hy8" path="res://Assets/Models/3d_linkedin_logo/scene.gltf" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dlblqfxct2f72" path="res://Assets/Models/question_mark/scene.gltf" id="10_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://buyr1ycixetgf" path="res://Scenes/Sign.tscn" id="10_hptm8"]
+[ext_resource type="PackedScene" uid="uid://c4m03buviahbg" path="res://Scenes/BowlingPin.tscn" id="12_6iyac"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oijfj"]
 panorama = ExtResource("1_8gbba")
@@ -59,160 +60,443 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="PhysicObjectsHolder" type="Node3D" parent="." unique_id=85340486]
+[node name="PhysicObjectsHolder" type="Node" parent="." unique_id=1165942970]
 
-[node name="RigidBody3D2" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=112250030]
+[node name="Pins" type="Node3D" parent="PhysicObjectsHolder" unique_id=1270503144]
+transform = Transform3D(0.83713484, 0, 0.54699653, 0, 1, 0, -0.54699653, 0, 0.83713484, -133.33223, 0.6904464, -132.0806)
+
+[node name="BowlingPin" parent="PhysicObjectsHolder/Pins" unique_id=1850165761 instance=ExtResource("12_6iyac")]
+
+[node name="BowlingPin10" parent="PhysicObjectsHolder/Pins" unique_id=1614539860 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8393402)
+
+[node name="BowlingPin2" parent="PhysicObjectsHolder/Pins" unique_id=48793798 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9629669, 0, 0)
+
+[node name="BowlingPin3" parent="PhysicObjectsHolder/Pins" unique_id=1922331653 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0207062, 0, 0)
+
+[node name="BowlingPin4" parent="PhysicObjectsHolder/Pins" unique_id=359706406 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0680847, 0, 2.0495605)
+
+[node name="BowlingPin8" parent="PhysicObjectsHolder/Pins" unique_id=655435077 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0680847, 0, -1.7897797)
+
+[node name="BowlingPin9" parent="PhysicObjectsHolder/Pins" unique_id=1945208983 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1753845, 0, -1.7897797)
+
+[node name="BowlingPin5" parent="PhysicObjectsHolder/Pins" unique_id=624450265 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0969543, 0, 2.0495605)
+
+[node name="BowlingPin6" parent="PhysicObjectsHolder/Pins" unique_id=381087807 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0969543, 0, -1.8475189)
+
+[node name="BowlingPin7" parent="PhysicObjectsHolder/Pins" unique_id=419865536 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2619934, 0, -1.8475189)
+
+[node name="Pyramid" type="Node" parent="PhysicObjectsHolder" unique_id=39790300]
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=112250030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 1.2)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D2" unique_id=389100095]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D2" unique_id=389100095]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D2" unique_id=199475495]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D2" unique_id=199475495]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D7" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=532282832]
+[node name="RigidBody3D7" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=532282832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1.2)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D7" unique_id=1417258218]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D7" unique_id=1417258218]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D7" unique_id=648527642]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D7" unique_id=648527642]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D9" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=780175650]
+[node name="RigidBody3D9" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=780175650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.25, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D9" unique_id=1993259262]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D9" unique_id=1993259262]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D9" unique_id=417350632]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D9" unique_id=417350632]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D10" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=213968735]
+[node name="RigidBody3D10" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=213968735]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.25, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D10" unique_id=1452238487]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D10" unique_id=1452238487]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D10" unique_id=1572630790]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D10" unique_id=1572630790]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D11" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=1906535217]
+[node name="RigidBody3D11" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=1906535217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.25, 1.2)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D11" unique_id=630167294]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D11" unique_id=630167294]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D11" unique_id=747196791]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D11" unique_id=747196791]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D12" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=830181155]
+[node name="RigidBody3D12" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=830181155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.25, -1.2)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D12" unique_id=807124926]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D12" unique_id=807124926]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D12" unique_id=1597352492]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D12" unique_id=1597352492]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D8" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=350861562]
+[node name="RigidBody3D8" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=350861562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.25, 1.2)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D8" unique_id=978047087]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D8" unique_id=978047087]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D8" unique_id=519758379]
+[node name="CSGBox3D" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D8" unique_id=519758379]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=146607012]
+[node name="RigidBody3D" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=146607012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4706452, 0)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D" unique_id=66406886]
+[node name="CSGBox3D6" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D" unique_id=66406886]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D" unique_id=114909809]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D" unique_id=114909809]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="RigidBody3D3" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=144314221]
+[node name="RigidBody3D3" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=144314221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.25, -1.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D3" unique_id=520964783]
+[node name="CSGBox3D2" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D3" unique_id=520964783]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D3" unique_id=764876587]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D3" unique_id=764876587]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="RigidBody3D4" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=1360825828]
+[node name="RigidBody3D4" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=1360825828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D4" unique_id=1283713033]
+[node name="CSGBox3D3" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D4" unique_id=1283713033]
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D4" unique_id=854549453]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D4" unique_id=854549453]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="RigidBody3D5" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=546697296]
+[node name="RigidBody3D5" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=546697296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 2.385, 0.6)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D5" unique_id=798880003]
+[node name="CSGBox3D4" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D5" unique_id=798880003]
 material = SubResource("StandardMaterial3D_344ge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D5" unique_id=409839047]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D5" unique_id=409839047]
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="RigidBody3D14" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=1236789420]
+[node name="RigidBody3D14" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=1236789420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 2.385, -0.6)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D14" unique_id=891193017]
+[node name="CSGBox3D4" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D14" unique_id=891193017]
 material = SubResource("StandardMaterial3D_344ge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D14" unique_id=46885655]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D14" unique_id=46885655]
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="RigidBody3D6" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=749964657]
+[node name="RigidBody3D6" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=749964657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 2.385, 0.6)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D6" unique_id=1086954207]
+[node name="CSGBox3D5" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D6" unique_id=1086954207]
 material = SubResource("StandardMaterial3D_344ge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D6" unique_id=547112711]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D6" unique_id=547112711]
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="RigidBody3D13" type="RigidBody3D" parent="PhysicObjectsHolder" unique_id=1423879611]
+[node name="RigidBody3D13" type="RigidBody3D" parent="PhysicObjectsHolder/Pyramid" unique_id=1423879611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 2.385, -0.6)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="PhysicObjectsHolder/RigidBody3D13" unique_id=312125564]
+[node name="CSGBox3D5" type="CSGBox3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D13" unique_id=312125564]
 material = SubResource("StandardMaterial3D_344ge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/RigidBody3D13" unique_id=1819668907]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicObjectsHolder/Pyramid/RigidBody3D13" unique_id=1819668907]
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="GHMarcos" parent="." unique_id=48135125 instance=ExtResource("6_21xkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.159557, 2, 74)
-url_to_open = "https://github.com/LigouleM"
-model_scene = ExtResource("8_344ge")
-model_offset = Vector3(0, -3, -6)
+[node name="linkBlockHolder" type="Node" parent="." unique_id=652718815]
 
-[node name="LDMarcos" parent="." unique_id=268502665 instance=ExtResource("6_21xkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2, 74)
-url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
-url_param_key = "linkedin"
-model_scene = ExtResource("9_ynf5e")
-model_offset = Vector3(0, -3, -6)
+[node name="Marcos" type="Node" parent="linkBlockHolder" unique_id=612889232]
 
-[node name="PopupMarcos" parent="." unique_id=514377004 instance=ExtResource("6_21xkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.078321, 2, 74)
-action_type = 1
-url_to_open = "google.com"
-url_param_key = "linkedin"
+[node name="EasterEgg" parent="linkBlockHolder/Marcos" unique_id=48135125 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.48288, 2, -142.2379)
+url_to_open = "https://www.youtube.com/watch?v=K1Kgy4g3kDo"
 model_scene = ExtResource("10_d1ilt")
 model_scale = Vector3(15, 15, 15)
 
-[node name="Sign" parent="." unique_id=285660480 instance=ExtResource("10_hptm8")]
-transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, 0.06265092, 0.71000195, 20.085924)
-text_size = 9
+[node name="GHMarcos" parent="linkBlockHolder/Marcos" unique_id=172278988 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.80074, 2, 29.102032)
+url_to_open = "https://github.com/LigouleM"
+url_param_key = "ML_github"
+model_scene = ExtResource("8_344ge")
+model_offset = Vector3(0, -3, -6)
 
-[node name="Sign2" parent="." unique_id=701988461 instance=ExtResource("10_hptm8")]
+[node name="LDMarcos" parent="linkBlockHolder/Marcos" unique_id=268502665 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.143486, 2, 40.858044)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "ML_linkedin"
+model_scene = ExtResource("9_ynf5e")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupMarcos" parent="linkBlockHolder/Marcos" unique_id=514377004 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.335114, 2, 73.62482)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "ML_presentacion"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="PopupMarcos2" parent="linkBlockHolder/Marcos" unique_id=419504879 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.096764, 2, 83.37981)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "ML_experiencia"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="PopupMarcos3" parent="linkBlockHolder/Marcos" unique_id=1744926451 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.85585, 2, 73.749886)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "ML_videojuegos"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="PopupMarcos4" parent="linkBlockHolder/Marcos" unique_id=1642092075 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.61033, 2, 52.864197)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "ML_actualidad"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="Josefina" type="Node" parent="linkBlockHolder" unique_id=787716253]
+
+[node name="LDJosefina" parent="linkBlockHolder/Josefina" unique_id=178950009 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.270935, 2, 82.65964)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "JS_linkedin"
+model_scene = ExtResource("9_ynf5e")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupJosefina" parent="linkBlockHolder/Josefina" unique_id=166927348 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.843189, 2, 73.62482)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "JS_presentacion"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="Conti" type="Node" parent="linkBlockHolder" unique_id=632366696]
+
+[node name="LDConti" parent="linkBlockHolder/Conti" unique_id=1679412894 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.09852, 2, 6.012985)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "CP_linkedin"
+model_scene = ExtResource("9_ynf5e")
+model_offset = Vector3(0, -3, -6)
+
+[node name="GHConti" parent="linkBlockHolder/Conti" unique_id=621307323 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.09684, 2, -4.7115164)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "CP_github"
+model_scene = ExtResource("8_344ge")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupConti" parent="linkBlockHolder/Conti" unique_id=631598882 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.35244, 2, -4.462265)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "CP_presentacion"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="Mia" type="Node" parent="linkBlockHolder" unique_id=56353643]
+
+[node name="LDMia" parent="linkBlockHolder/Mia" unique_id=2079289733 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.79969, 2, -80.13114)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "MB_github"
+model_scene = ExtResource("8_344ge")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupMia" parent="linkBlockHolder/Mia" unique_id=268294454 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.590927, 2, -68.93344)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "MB_presentacion"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="Guada" type="Node" parent="linkBlockHolder" unique_id=1678747506]
+
+[node name="GHGuada" parent="linkBlockHolder/Guada" unique_id=1127870715 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.812546, 2, -68.79321)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "GB_github"
+model_scene = ExtResource("8_344ge")
+model_offset = Vector3(0, -3, -6)
+
+[node name="LDGuada" parent="linkBlockHolder/Guada" unique_id=1463060908 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.191982, 2, -79.27832)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "GB_github"
+model_scene = ExtResource("9_ynf5e")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupGuada" parent="linkBlockHolder/Guada" unique_id=1251759578 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.003258, 2, -68.93344)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "GB_presentacion"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="Cam" type="Node" parent="linkBlockHolder" unique_id=303234233]
+
+[node name="GHCam" parent="linkBlockHolder/Cam" unique_id=994610441 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.38425, 2, -5.071068)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "CM_github"
+model_scene = ExtResource("8_344ge")
+model_offset = Vector3(0, -3, -6)
+
+[node name="LDCam" parent="linkBlockHolder/Cam" unique_id=901476309 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.13363, 2, 4.976261)
+url_to_open = "https://www.linkedin.com/in/marcos-ligoule-ingalina-aa1b15162/"
+url_param_key = "CM_github"
+model_scene = ExtResource("9_ynf5e")
+model_offset = Vector3(0, -3, -6)
+
+[node name="PopupCam" parent="linkBlockHolder/Cam" unique_id=167093524 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.09955, 2, -5.2863216)
+action_type = 1
+url_to_open = "google.com"
+url_param_key = "linkedin"
+react_popup_id = "CM_presentacion"
+model_scene = ExtResource("10_d1ilt")
+model_scale = Vector3(15, 15, 15)
+
+[node name="signHolder" type="Node" parent="." unique_id=1318301595]
+
+[node name="Sign" parent="signHolder" unique_id=285660480 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, 0.06265092, 0.71000195, 20.085924)
+text_left = "Sardinas Josefina"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign2" parent="signHolder" unique_id=701988461 instance=ExtResource("10_hptm8")]
 transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, 0.06265092, 0.71000195, 66.1175)
-arrow_right = 2
-text_size = 9
+text_left = "Sardinas Josefina"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign6" parent="signHolder" unique_id=529438275 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, 78.161385, 0.71000195, 60.61844)
+text_left = "Sardinas Josefina"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign7" parent="signHolder" unique_id=1594164861 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, -75.26426, 0.71000195, 18.57414)
+text_left = "Sardinas Josefina"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign3" parent="signHolder" unique_id=658681756 instance=ExtResource("10_hptm8")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 23.004984, 0.710001, -0.058834076)
+text_left = "Plaza Constanza"
+text_right = "María Luján"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign4" parent="signHolder" unique_id=1028855110 instance=ExtResource("10_hptm8")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 54.809658, 0.710001, 77.37903)
+text_left = "Plaza Constanza"
+text_right = "María Luján"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign8" parent="signHolder" unique_id=355119607 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 0.06998825, 0.710001, -21.484764)
+text_left = "Burgos
+Valentina
+Guadalupe"
+text_right = "Mía
+Corrado Bujad"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign13" parent="signHolder" unique_id=560216358 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 0.06998825, 0.710001, -66.709816)
+text_left = "Burgos
+Valentina
+Guadalupe"
+text_right = "Mía
+Corrado Bujad"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign11" parent="signHolder" unique_id=416502496 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, -7, 0, 7, 0, 7, 0, -3.059797e-07, -75.25894, 0.710001, -51.524048)
+text_left = "Moreno"
+text_right = "Camila Solana"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign14" parent="signHolder" unique_id=1852631196 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-7, 0, -6.119594e-07, 0, 7, 0, 6.119594e-07, 0, -7, -20.430733, 0.710001, -0.0484066)
+text_left = "Moreno"
+text_right = "Camila Solana"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign12" parent="signHolder" unique_id=1436030294 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, -75.25894, 0.710001, 19.528755)
+text_left = "Moreno"
+text_right = "Camila Solana"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign9" parent="signHolder" unique_id=309355645 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 77.987656, 0.710001, -29.177254)
+text_left = "Burgos
+Valentina
+Guadalupe"
+text_right = "Mía
+Corrado Bujad"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign10" parent="signHolder" unique_id=1216573398 instance=ExtResource("10_hptm8")]
+transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, -74.67047, 0.710001, -29.177254)
+text_left = "Burgos
+Valentina
+Guadalupe"
+text_right = "Mía
+Corrado Bujad"
+arrow_right = 0
+text_size = 8
+
+[node name="Sign5" parent="signHolder" unique_id=1259541491 instance=ExtResource("10_hptm8")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 54.809658, 0.710001, -74.625595)
+text_left = "Plaza Constanza"
+text_right = "María Luján"
+arrow_right = 0
+text_size = 8

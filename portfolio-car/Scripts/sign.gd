@@ -51,7 +51,7 @@ func _update_boards() -> void:
 func _format_text(base_text: String, arrow: ArrowDir) -> String:
 	match arrow:
 		ArrowDir.IZQUIERDA:
-			return "\n←" + base_text
+			return base_text + "\n←"
 		ArrowDir.DERECHA:
 			return base_text + "\n→"
 		ArrowDir.ABAJO:

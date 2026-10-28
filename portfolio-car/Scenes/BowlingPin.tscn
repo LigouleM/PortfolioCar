@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c4m03buviahbg"]
+
+[ext_resource type="PackedScene" uid="uid://dnfrbgl17n8g7" path="res://Assets/Models/classic_bowling_pin/scene.gltf" id="1_kjtqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_epsyv"]
+size = Vector3(3.171875, 10.357056, 3.172226)
+
+[node name="BowlingPin" type="RigidBody3D" unique_id=1850165761]
+
+[node name="Sketchfab_Scene" parent="." unique_id=379027258 instance=ExtResource("1_kjtqx")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -31.6, -13.635, -15.483186)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1385213457]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.05029297, 2.599058, -0.038710594)
+shape = SubResource("BoxShape3D_epsyv")

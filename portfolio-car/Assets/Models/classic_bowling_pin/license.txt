@@ -1,0 +1,11 @@
+Model Information:
+* title:	Classic Bowling Pin
+* source:	https://sketchfab.com/3d-models/classic-bowling-pin-30f1012f6f7146d58308fa65bd38ed75
+* author:	AM_Doodle (https://sketchfab.com/amdoodle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Classic Bowling Pin" (https://sketchfab.com/3d-models/classic-bowling-pin-30f1012f6f7146d58308fa65bd38ed75) by AM_Doodle (https://sketchfab.com/amdoodle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
