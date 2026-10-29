@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dlblqfxct2f72" path="res://Assets/Models/question_mark/scene.gltf" id="10_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://buyr1ycixetgf" path="res://Scenes/Sign.tscn" id="10_hptm8"]
 [ext_resource type="PackedScene" uid="uid://c4m03buviahbg" path="res://Scenes/BowlingPin.tscn" id="12_6iyac"]
+[ext_resource type="Texture2D" uid="uid://bgdgjjobusoll" path="res://Assets/UI/pause.png" id="13_fdnlq"]
+[ext_resource type="Script" uid="uid://c5b2r6mstcqb3" path="res://Scripts/ui.gd" id="13_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://dstnraspp2hbh" path="res://Assets/UI/audioOn.png" id="14_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://br2bnxeut8r5h" path="res://Assets/UI/audioOff.png" id="15_k12tt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oijfj"]
 panorama = ExtResource("1_8gbba")
@@ -523,3 +527,36 @@ text_left = "Plaza Constanza"
 text_right = "María Luján"
 arrow_right = 0
 text_size = 8
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2028559260]
+process_mode = 3
+script = ExtResource("13_wsu2k")
+texAudioOn = ExtResource("14_jkdf5")
+texAudioOff = ExtResource("15_k12tt")
+
+[node name="Pause" type="Button" parent="CanvasLayer" unique_id=805194080]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_top = 22.0
+offset_right = 27.0
+offset_bottom = 130.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("13_fdnlq")
+
+[node name="Sound" type="Button" parent="CanvasLayer" unique_id=346019810]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -163.0
+offset_top = 22.0
+offset_right = -55.0
+offset_bottom = 130.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("14_jkdf5")
+
+[connection signal="pressed" from="CanvasLayer/Pause" to="CanvasLayer" method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/Sound" to="CanvasLayer" method="_on_sound_pressed"]
